@@ -28,6 +28,10 @@ You'll need to configure the following environment variables in Lambda:
 
 ![Environment Variables](images/env-vars.png)
 
+Once you have the function setup, you'll want to create a trigger for it to run. To run the function every 10 minutes, create a new CloudWatch Events trigger with a Schedule Expression equal to rate(10 minutes). If you want to change the frequency of how often the Lambda function is called, just change the rate in the Schedule Expression. For more on CloudWatch Schedule Expressions, see this [documentation](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
+
+![Trigger Setup](images/function-trigger.png)
+
 # Deploying
 
 After configuring the function in Lambda, you can use `deploy.sh` to compile the
