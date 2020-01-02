@@ -5,7 +5,7 @@ Awair API and saves CSV files to S3.
 
 # Configuration
 
-This is how the Lambda function should be configured.
+Create a new Lambda function called **awair-to-s3** (if you want to name it something else, you'll have to update **main.go**). This is how the Lambda function should be configured.
 
 ![Function Settings](images/function-settings.png)
 
