@@ -5,7 +5,7 @@ Awair API and saves CSV files to S3.
 
 # Configuration
 
-This is how the Lambda function should be configured.
+Create a new Lambda function called **awair-to-s3** (if you want to name it something else, you'll have to update **main.go**). This is how the Lambda function should be configured.
 
 ![Function Settings](images/function-settings.png)
 
@@ -27,6 +27,10 @@ You'll need to configure the following environment variables in Lambda:
 - `DEVICE_ID`
 
 ![Environment Variables](images/env-vars.png)
+
+Once you have the function setup, you'll want to create a trigger for it to run. To run the function every hour, create a new CloudWatch Events trigger with a Schedule Expression equal to rate(1 hour). If you want to change the frequency of how often the Lambda function is called, just change the rate in the Schedule Expression. For more on CloudWatch Schedule Expressions, see this [documentation](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
+
+![Trigger Setup](images/function-trigger.png)
 
 # Deploying
 
